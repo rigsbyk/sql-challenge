@@ -81,10 +81,14 @@ salaries DESC;
 
 --Find the employee who made the highest salary using a subquery
 
-select e.emp_no,e.first_name,e.last_name,s.salary from employees as e
+select e.emp_no,e.first_name,e.last_name,e.hire_date,s.salary from employees as e
 inner join salaries s ON e.emp_no = s.emp_no
 where s.salary = (select max(salary) from salaries);
 
+--Find the dept_no and dept_name for the highest paid salary query from above
+select e.first_name, e.last_name,de.dept_no, d.dept_name
+from employees as e inner join dept_emp de on de.emp_no = e.emp_no
+inner join departments d on d.dept_no = de.dept_no where e.emp_no = 205000;
 
 
 
