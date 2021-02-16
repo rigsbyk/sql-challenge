@@ -69,5 +69,12 @@ Select last_name,count(last_name)as "Last Name Count"
 From employees
 Group by last_name
 Order by last_name desc;
+------------------------------------------------------------------
+--POST SUBMISSION IN 2021 to continue to practice--
 
+--Find all employees who made over $100,000 in salary
+
+select employees.emp_no, employees.first_name, employees.last_name,
+salaries.salary from employees inner join salaries on 
+employees.emp_no = salaries.emp_no where salaries.salary > 100000
 
