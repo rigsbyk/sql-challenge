@@ -72,9 +72,15 @@ Order by last_name desc;
 ------------------------------------------------------------------
 --POST SUBMISSION IN 2021 to continue to practice--
 
---Find all employees who made over $100,000 in salary
+--Find all employees who made over $100,000 in salary in DESC order
 
 select employees.emp_no, employees.first_name, employees.last_name,
 salaries.salary from employees inner join salaries on 
-employees.emp_no = salaries.emp_no where salaries.salary > 100000
+employees.emp_no = salaries.emp_no where salaries.salary > 100000 ORDER BY 
+salaries DESC;
+
+--Find the employee who made the highest salary using a subquery
+select e.emp_no,e.first_name,e.last_name,s.salary from employees as e
+inner join salaries s ON e.emp_no = s.emp_no
+where s.salary = (select max(salary) from salaries);
 
