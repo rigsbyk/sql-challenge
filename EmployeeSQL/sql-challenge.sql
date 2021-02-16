@@ -90,7 +90,7 @@ select e.first_name, e.last_name,de.dept_no, d.dept_name
 from employees as e inner join dept_emp de on de.emp_no = e.emp_no
 inner join departments d on d.dept_no = de.dept_no where e.emp_no = 205000;
 
---Combining the two queries above to continue to practice multiple joins
+--Combining the two queries above to continue to practice multiple joins within one query
 select e.emp_no,e.first_name,e.last_name,e.hire_date,s.salary,de.dept_no, d.dept_name from employees as e
 inner join salaries s ON e.emp_no = s.emp_no inner join dept_emp 
 de ON de.emp_no = s.emp_no inner join departments d on d.dept_no = de.dept_no
